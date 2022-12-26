@@ -1,0 +1,77 @@
+
+.button
+    $this: &
+    $color: $blackColor
+    +bounce-to-right
+    position: relative
+    display: inline-flex
+    justify-content: center
+    align-items: center
+    min-width: 216px
+    padding-top: 30px
+    padding-bottom: 30px
+
+    color: #fff
+    background-color: $color
+    border: none
+    text-transform: uppercase
+
+    &:disabled
+        background-color: $lightGrayColor
+        cursor: default
+
+        &::before
+            background-color: transparent
+
+    &:not(:disabled):hover
+        color: $color
+        &::before
+            background-color: #fff
+        &::after
+            border-color: currentColor
+            +tr(border-color .5s cubic-bezier(0.52, 1.64, 0.37, 0.66))
+
+    &::before
+        background-color: $color
+
+    &::after
+        content: ''
+        position: absolute
+        z-index: -1
+        inset: 0
+        border: 6px solid transparent
+
+    &--accent:not(:disabled)
+        $color: $accentColor
+        background-color: $color
+        &:hover
+            color: $color
+            &::before
+                background-color: #fff
+            &::after
+                border-color: currentColor
+                +tr(border-color .5s cubic-bezier(0.52, 1.64, 0.37, 0.66))
+
+        &::before
+            background-color: $color
+
+    &__text
+        display: inherit
+        align-items: inherit
+        margin-left: auto
+        margin-right: auto
+        padding-left: 24px
+        padding-right: 19px
+        font-size: 18px
+        line-height: 1
+
+    &__line
+        width: 70px
+        height: 2px
+        border: none
+        background-color: currentColor
+
+    svg
+        margin-left: 16px
+        *
+            fill: currentColor

@@ -1,0 +1,51 @@
+.checkbox
+    $this: &
+    display: inline-block
+    vertical-align: middle
+    line-height: 0
+
+    &--danger
+        color: red
+
+    &__field
+        display: none
+
+        &:disabled + #{$this}__label::before
+            border-color: $lightGrayColor
+
+        &:not(:checked):not(:disabled) + #{$this}__label:hover::before
+            border-width: 4px
+
+        &:not(:disabled) + #{$this}__label
+            cursor: pointer
+
+        &:checked:disabled + #{$this}__label::after
+            background-color: $lightGrayColor
+
+        &:checked + #{$this}__label::after
+            background-color: currentColor
+
+    &__label
+        $size: 40px
+        $offset: 16px
+        +pseudo
+        display: inline-flex
+        align-items: center
+        height: $size
+        padding-left: $size + $offset
+        padding-right: $offset
+
+        font-size: 21px
+        line-height: 30px
+
+        &::before
+            width: $size
+            height: $size
+            border: 2px solid
+            transition: border-width .1s ease-in-out
+
+        &::after
+            +vcenter
+            left: $size / 2
+            width: $size / 2
+            height: $size / 2
