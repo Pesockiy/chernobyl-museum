@@ -2,7 +2,7 @@ import React from "react";
 import cn from "class-names";
 import { PropTypes } from "prop-types";
 
-const Button = ({
+const SquareButton = ({
   type,
   color,
   disabled,
@@ -11,19 +11,19 @@ const Button = ({
   classNames,
   line,
   variant,
-  textColor,
-  fullWidth,
+  textVariant,
+  fullWidth
 }) => {
   const classes = cn(
     "button",
-    color === "accent" && "button--accent",
+    color === "accent" && `button--${color}`,
     fullWidth && "button--full-width",
-    variant === "outlined" && "button--outlined",
-    textColor === "black"
+    variant === "outlined" && `button--${variant}`,
+    textVariant === "black"
       ? "button--text-black"
-      : textColor === "accent"
+      : textVariant === "accent"
       ? "button--text-accent"
-      : textColor === "white"
+      : textVariant === "white"
       ? "button--text-white"
       : "",
     classNames
@@ -44,10 +44,9 @@ const Button = ({
   );
 };
 
-Button.propTypes = {
+SquareButton.propTypes = {
   type: PropTypes.string,
   color: PropTypes.string,
-  textColor: PropTypes.oneOf(["black", "white", "accent"]),
   fullWidth: PropTypes.bool,
   disabled: PropTypes.bool,
   onClick: PropTypes.func,
@@ -55,14 +54,19 @@ Button.propTypes = {
   classNames: PropTypes.string,
   line: PropTypes.bool,
   variant: PropTypes.string,
+  textVariant: PropTypes.oneOf(["black", "white", "accent"]),
 };
 
-Button.defaultProp = {
+SquareButton.defaultProp = {
   type: "button",
+  color: "",
   disabled: false,
   onClick: () => {},
+  classNames: "",
   line: false,
   variant: "default",
+  textVariant: "",
+  fullWidth: ""
 };
 
-export default Button;
+export default SquareButton;

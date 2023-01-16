@@ -1,0 +1,43 @@
+.side-block
+    z-index: 999
+    position: fixed
+    top: 0
+    bottom: 0
+    right: 0
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    width: 100px
+    margin-left: auto
+    border-left: 2px solid currentColor
+    background-color: $mainColor
+
+    &--white
+        background-color: $blackColor
+        color: $whiteColor
+
+    &__button
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 100%
+        aspect-ratio: 1
+        background-color: transparent
+        color: inherit
+
+        &--menu
+            border-bottom: 2px solid
+
+        &--scroll-top
+            display: none
+            border-top: 2px solid
+
+        svg,
+        svg > *
+            fill: currentColor
+
+    &__arrow
+        transform: rotate(-90deg)
+
+.is-visible
+    display: flex

@@ -8,6 +8,7 @@
     justify-content: center
     align-items: center
     min-width: 216px
+    height: 80px
     padding-top: 30px
     padding-bottom: 30px
 
@@ -44,30 +45,59 @@
     &--accent:not(:disabled)
         $color: $accentColor
         background-color: $color
-        &:hover
+
+        &:not(#{$this}--text-accent):hover
             color: $color
+
+        &:hover
             &::before
                 background-color: #fff
             &::after
-                border-color: currentColor
                 +tr(border-color .5s cubic-bezier(0.52, 1.64, 0.37, 0.66))
+                border-color: currentColor
 
         &::before
             background-color: $color
 
+    &--outlined:not(:disabled)
+        $color: $blackColor
+        justify-content: center
+        color: $color
+
+        &::after
+            border-width: 10px
+            border-color: $color
+
+        &:hover
+            &::after
+                border-color: $color!important
+
+    &--text-black:not(:disabled)
+        color: $blackColor
+
+    &--text-accent:not(:disabled)
+        color: $accentColor
+
+    &--text-white:not(:disabled)
+        color: #fff
+
+    &--full-width
+        width: 100%
+
     &__text
         display: inherit
         align-items: inherit
-        margin-left: auto
-        margin-right: auto
         padding-left: 24px
         padding-right: 19px
-        font-size: 18px
-        line-height: 1
+        margin-left: auto
+        margin-right: auto
+        font-size: 1.13rem
+        line-height: 1.5
 
     &__line
         width: 70px
         height: 2px
+        margin-left: initial
         border: none
         background-color: currentColor
 
