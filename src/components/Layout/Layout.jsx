@@ -8,8 +8,13 @@ import Footer from "../Footer";
 const Layout = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isVisible, setVisible] = useState(false);
+  const [isSticky, setSticky] = useState(false);
+  const [footerHeight, setFooterHeight] = useState(0);
+  const [i, setI] = useState(true);
 
   const menuHandle = () => setMenuOpen(() => !menuOpen);
+
+  const footerRef = useRef();
 
   const scrollToTopHandle = () => {
     window.scrollTo({
@@ -19,12 +24,28 @@ const Layout = () => {
   };
 
   const toggleVisible = () => {
+    // setI(footerRef.current.offsetTop + 120 > document.documentElement.scrollTop - footerRef.current.offsetHeight + window.screen.height)
+    // console.log(footerRef.current.offsetTop + footerRef.current.offsetHeight - ( document.documentElement.scrollTop + window.screen.height) - 160)
+    setI(
+      footerRef.current.offsetTop +
+        footerRef.current.offsetHeight -
+        (document.documentElement.scrollTop + window.screen.height) >
+        80
+    );
+    // console.log(footerRef.current.offsetTop + footerRef.current.offsetHeight - ( document.documentElement.scrollTop + window.screen.height))
+    // setI(footerRef.current.offsetTop + footerRef.current.offsetHeight  > document.documentElement.scrollTop + window.screen.height)
     const scrolled = document.documentElement.scrollTop;
 
     if (scrolled > 300) {
       setVisible(true);
     } else if (scrolled <= 300) {
       setVisible(false);
+    
+    }
+    if (scrolled > window.screen.height) {
+      setSticky(true);
+    } else if (scrolled <= window.screen.height ) {
+      setSticky(false);
     }
   };
 
@@ -36,19 +57,27 @@ const Layout = () => {
     };
   }, []);
 
+  // useEffect(() => {
+
+  //   setFooterHeight(footerRef.current.offsetTop + footerRef.current.offsetHeight - ( document.documentElement.scrollTop + window.screen.height) - 160)
+  //   console.log(footerHeight)
+  // }, [i]);
+
   return (
     <>
       {menuOpen && <Menu />}
-
-      <SideBlock
-        isVisible={isVisible}
-        isMenuOpen={menuOpen}
-        scrollToTop={scrollToTopHandle}
-        menuHandle={menuHandle}
-        isSticky={isVisible}
-      />
+      <div className="b">
+        <SideBlock
+          isVisible={isVisible}
+          isMenuOpen={menuOpen}
+          scrollToTop={scrollToTopHandle}
+          menuHandle={menuHandle}
+          isSticky={isSticky}
+          // style={{ bottom: !i && 160 - footerHeight + "px" }}
+        />
       <Outlet />
-      <Footer />
+      </div>
+      <Footer ref={footerRef} />
     </>
   );
 };

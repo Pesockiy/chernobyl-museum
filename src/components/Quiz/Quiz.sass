@@ -1,0 +1,50 @@
+.quiz
+    $this: &
+    padding-top: 72px
+    padding-bottom: 72px
+    
+    &__inner
+        display: flex
+        flex-wrap: wrap
+        align-items: flex-start
+        gap: 70px
+
+    &__question-screen
+        flex: 2
+        padding: 70px
+
+        border: 10px solid
+
+    &__progress
+        flex: 1.5
+
+    &__title
+        margin-bottom: 24px
+        font: 500 2.5rem/1.48 $baseFont
+        letter-spacing: 0.1em
+
+    &__line
+        margin-bottom: 24px
+
+    &__text
+        margin-bottom: 16px
+
+    &__progress
+        margin-bottom: 40px
+
+    #{$this}__button:hover::before
+        background-color: $mainColor
+
+.question-screen
+    &__title,
+    &__line
+        margin-bottom: 32px
+    &__text
+        margin-bottom: 40px
+    &__variants
+        display: grid
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
+        justify-content: space-between
+        gap: 16px
+    &__checkbox
+        flex: 1 0 50%

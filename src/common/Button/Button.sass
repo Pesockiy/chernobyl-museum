@@ -17,17 +17,11 @@
     border: none
     text-transform: uppercase
 
-    &:disabled
-        background-color: $lightGrayColor
-        cursor: default
-
-        &::before
-            background-color: transparent
-
-    &:not(:disabled):hover
+    &:hover
         color: $color
         &::before
             background-color: #fff
+
         &::after
             border-color: currentColor
             +tr(border-color .5s cubic-bezier(0.52, 1.64, 0.37, 0.66))
@@ -42,24 +36,24 @@
         inset: 0
         border: 6px solid transparent
 
-    &--accent:not(:disabled)
+    &--accent
         $color: $accentColor
         background-color: $color
 
         &:not(#{$this}--text-accent):hover
             color: $color
 
-        &:hover
-            &::before
-                background-color: #fff
-            &::after
-                +tr(border-color .5s cubic-bezier(0.52, 1.64, 0.37, 0.66))
-                border-color: currentColor
+        // &:hover
+        //     &::before
+        //         background-color: #fff
+        //     &::after
+        //         +tr(border-color .5s cubic-bezier(0.52, 1.64, 0.37, 0.66))
+        //         border-color: currentColor
 
         &::before
             background-color: $color
 
-    &--outlined:not(:disabled)
+    &--outlined
         $color: $blackColor
         justify-content: center
         color: $color
@@ -72,17 +66,30 @@
             &::after
                 border-color: $color!important
 
-    &--text-black:not(:disabled)
+    &--text-black
         color: $blackColor
 
-    &--text-accent:not(:disabled)
+    &--text-accent
         color: $accentColor
 
-    &--text-white:not(:disabled)
+    &--text-white
         color: #fff
 
     &--full-width
         width: 100%
+
+    &:disabled
+        $color: $whiteColor
+        background-color: $lightGrayColor
+        cursor: default
+        #{$this}__line
+            background-color: $color
+        #{$this}__text
+            color: $color
+        &::before
+            background-color: transparent
+        &::after
+            border-color: transparent
 
     &__text
         display: inherit

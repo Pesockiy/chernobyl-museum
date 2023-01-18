@@ -8,7 +8,7 @@ const Button = ({
   disabled,
   onClick,
   children,
-  classNames,
+  className,
   line,
   variant,
   textColor,
@@ -26,7 +26,7 @@ const Button = ({
       : textColor === "white"
       ? "button--text-white"
       : "",
-    classNames
+    className
   );
 
   return (
@@ -52,7 +52,7 @@ Button.propTypes = {
   disabled: PropTypes.bool,
   onClick: PropTypes.func,
   children: PropTypes.node.isRequired,
-  classNames: PropTypes.string,
+  className: PropTypes.string,
   line: PropTypes.bool,
   variant: PropTypes.string,
 };

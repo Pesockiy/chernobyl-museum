@@ -1,0 +1,15 @@
+.nav
+    $this: &
+    display: flex
+    gap: 90px
+    &__col
+        &--main
+            text-transform: uppercase
+    &__item
+        padding-left: 40px
+        border-left: 10px solid
+        &:not(:last-of-type)
+            margin-bottom: 24px
+
+    &__item--inner + &__item--inner
+        margin-top: 8px

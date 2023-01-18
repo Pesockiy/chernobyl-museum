@@ -1,11 +1,11 @@
-import React from "react";
+import React, {forwardRef} from "react";
 
-const Footer = () => {
+const Footer = forwardRef((props, ref) => {
   return (
-    <footer className="footer">
+    <footer ref={ref} className="footer">
       <div className="container"></div>
     </footer>
   );
-};
+});
 
 export default Footer;

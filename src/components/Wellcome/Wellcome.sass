@@ -1,4 +1,5 @@
 .wellcome
+    $this: &
     padding-top: 72px
     padding-bottom: 72px
     background-color: $blackColor
@@ -23,3 +24,7 @@
         font: 400 1.31rem/1.43 $baseFont 
         &--accent
             color: $infoColor
+
+    #{$this}__button:hover
+        &::before
+            background-color: $blackColor

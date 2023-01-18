@@ -5,3 +5,51 @@
     justify-content: space-between
     padding-top: 56px
     padding-bottom: 56px
+
+    &__logo
+        font: 500 2.5rem/1.48 $baseFont
+        letter-spacing: 0.1em
+        text-transform: uppercase
+
+.lang
+    &__list
+        display: flex
+        align-items: center
+
+    &__item + &__item
+        margin-left: 40px
+        
+    &__item
+        display: inherit
+        align-items: inherit
+        svg
+            margin-right: 4px
+            width: 32px
+            height: 20px
+
+.options
+    display: flex
+    align-items: center
+
+    &__item
+        display: inherit
+        align-items: inherit
+        padding-left: 40px
+        padding-right: 40px
+        color: $whiteColor
+        cursor: pointer
+
+        &:not(:last-of-type)
+            border-right: 2px solid
+
+        > svg
+            margin-right: 11px
+            width: 24px
+            height: 24px
+        svg
+            object-fit: contain
+            object-position: center
+
+        svg,
+        svg > *
+            fill: currentColor

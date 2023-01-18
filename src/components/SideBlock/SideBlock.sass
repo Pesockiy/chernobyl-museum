@@ -1,6 +1,6 @@
 .side-block
     z-index: 999
-    position: fixed
+    position: sticky
     top: 0
     bottom: 0
     right: 0
@@ -11,7 +11,9 @@
     margin-left: auto
     border-left: 2px solid currentColor
     background-color: $mainColor
-
+    &--sticky
+        position: sticky
+        // height: 100vh
     &--white
         background-color: $blackColor
         color: $whiteColor
@@ -41,3 +43,8 @@
 
 .is-visible
     display: flex
+    opacity: 0
+    animation: fide .3s ease both
+    @keyframes fide
+        to
+            opacity: 1
