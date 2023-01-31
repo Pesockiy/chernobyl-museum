@@ -1,13 +1,40 @@
 html
   font-size: $baseFontSize
 
+html,
+body
+  height: 100%
+
 body
   background-color: $mainColor
+  svg,
+  svg * 
+    fill: currentColor
+  &::-webkit-scrollbar
+    width: 0
+
+img
+  max-width: 100%
+
+#root,
+.App
+  height: inherit
+
+.App
+  display: flex
+  flex-direction: column
 
 .container
-  max-width: 1180px
+  max-width: 1200px
   margin-left: auto
   margin-right: auto
   padding-left: 15px
   padding-right: 15px
 
+.main
+  position: relative
+  flex-grow: 1
+  display: flex
+  flex-direction: column
+  justify-content: center
+  padding-right: 100px

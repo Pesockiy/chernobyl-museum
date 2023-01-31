@@ -31,3 +31,55 @@ export const socialsData = [
     { icon: false, text: "Twitter", href: "https://twitter.com/24" },
     { icon: false, text: "YouTube", href: "https://youtube.com/24" },
 ];
+
+
+export const eventsData = [
+    {
+        img: "https://via.placeholder.com/600/771796",
+        // img: "../../assets/img/doing-1.jpg",
+        date: "31.09.2022",
+        title: "Виставка",
+        text: "«Радіація в житті людини»",
+        id: 1
+    },
+    {
+        // img: "doing-1.jpg",
+        img: "https://via.placeholder.com/600/771796",
+        date: "02.09.2022",
+        title: "Екскурсія",
+        text: "«У світі атомних ядер»",
+        id: 2
+    },
+    {
+        img: "https://via.placeholder.com/600/771796",
+        // img: "doing-2.jpg",
+        date: "14.09.2022",
+        title: "Конференція",
+        text: "«Енергія та суспільство»",
+        id: 3
+    },
+    {
+        img: "https://via.placeholder.com/600/771796",
+        // img: "doing-3.jpg",
+        date: "31.09.2022",
+        title: "Виставка",
+        text: "«Радіація в житті людини»",
+        id: 4
+    },
+    {
+        img: "https://via.placeholder.com/600/771796",
+        // img: "doing-2.jpg",
+        date: "02.09.2022",
+        title: "Екскурсія",
+        text: "«У світі атомних ядер»",
+        id: 5
+    },
+    {
+        img: "https://via.placeholder.com/600/771796",
+        // img: "doing-3.jpg",
+        date: "14.09.2022",
+        title: "Конференція",
+        text: "«Енергія та суспільство»",
+        id: 6
+    }
+]

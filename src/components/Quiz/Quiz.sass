@@ -14,6 +14,8 @@
         padding: 70px
 
         border: 10px solid
+        +rmin(992)
+            min-height: 420px
 
     &__progress
         flex: 1.5
@@ -32,7 +34,7 @@
     &__progress
         margin-bottom: 40px
 
-    #{$this}__button:hover::before
+    #{$this}__button:hover:not(:disabled)::before
         background-color: $mainColor
 
 .question-screen

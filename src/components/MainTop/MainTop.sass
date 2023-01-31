@@ -1,21 +1,35 @@
 .main-top
-    +clr
+    $this: &
     padding-top: 56px
     padding-bottom: 64px
 
+    &__inner
+        display: grid
+        gap: 24px
+        +rmin(768)
+            grid-template-columns: 2.17fr 1fr
+
     &__title
-        font-size: 110px
-        line-height: 1.18
+        +h1
         letter-spacing: 0.1em
         text-transform: uppercase
 
     &__img
-        float: left
         max-width: 100%
-        margin-right: 15px
+        order: 0
+        +rmin(768)
+            grid-area: 1 / 1 / 4 / 1
 
     &__text
-
-    &__line
-        margin-top: 24px
-        margin-bottom: 24px
+        font-family: $secondFont
+        &:first-of-type
+            +r(768)
+                grid-row-start: 1
+        & + #{$this}__text
+            &::before
+                +rmin(768)
+                    content: ''
+                    width: 100%
+                    display: block
+                    margin-bottom: 24px
+                    border: 1px solid currentColor

@@ -1,4 +1,5 @@
 import React from "react";
+import { PropTypes } from "prop-types";
 import cx from "class-names";
 
 const Social = ({ href, icon, text, className }) => {
@@ -11,6 +12,17 @@ const Social = ({ href, icon, text, className }) => {
       </a>
     </>
   );
+};
+
+Social.propTypes = {
+  href: PropTypes.string.isRequired,
+  icon: PropTypes.string,
+  text: PropTypes.string.isRequired,
+  className: PropTypes.string,
+};
+
+Social.defaultProp = {
+  className: "",
 };
 
 export default Social;

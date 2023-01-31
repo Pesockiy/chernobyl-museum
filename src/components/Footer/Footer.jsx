@@ -1,11 +1,18 @@
-import React, {forwardRef} from "react";
+import React from "react";
+import { PropTypes } from "prop-types";
 
-const Footer = forwardRef((props, ref) => {
+const Footer = () => {
   return (
-    <footer ref={ref} className="footer">
-      <div className="container"></div>
+    <footer className="footer">
+      <div className="footer__inner container">
+        <div className="footer__item">Контактна інформація</div>
+        <div className="footer__item">Контактна інформація</div>
+        <div className="footer__item">Контактна інформація</div>
+        <div className="footer__item">Контактна інформація</div>
+        <div className="footer__item">Контактна інформація</div>
+      </div>
     </footer>
   );
-});
+};
 
 export default Footer;

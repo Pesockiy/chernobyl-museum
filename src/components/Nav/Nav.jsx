@@ -1,14 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { PropTypes } from "prop-types";
 import cx from "class-names";
 
 const path = [
   {
-    path: "main",
+    path: "",
     title: "головна",
   },
   {
-    path: "main",
+    path: "sdsf",
     title: "Придбати квитки",
   },
   {
@@ -28,22 +29,30 @@ const path = [
     title: "проєкти музею",
   },
   {
-    path: "main",
+    path: "quiz",
     title: "Опитування",
   },
 ];
 
-const Nav = ({ classNames }) => {
+const Nav = ({ openHandler, classNames }) => {
+  const navigate = useNavigate();
+
   const classes = cx("nav", classNames);
+
+  const toggleMenu = async (e, path) => {
+    e.preventDefault();
+    navigate(path, true);
+    openHandler((prev) => !prev);
+  };
 
   return (
     <nav className={classes}>
       <div className="nav__col nav__col--main">
         <ul className="nav__list">
-          {path?.map((el) => (
-            <li className="nav__item">
-              <Link to={el.path} className="menu__link">
-                {el.title}
+          {path?.map(({ title, path }) => (
+            <li key={title} className="nav__item">
+              <Link onClick={(e) => toggleMenu(e, path)} className="menu__link">
+                {title}
               </Link>
             </li>
           ))}
@@ -53,10 +62,13 @@ const Nav = ({ classNames }) => {
         <ul className="nav__list">
           <li className="nav__item">
             <ul className="nav__list nav__list--inner">
-              {path?.map((el) => (
+              {path?.map(({ title, path }) => (
                 <li className="nav__item--inner">
-                  <Link to={el.path} className="nav__link">
-                    {el.title}
+                  <Link
+                    onClick={(e) => toggleMenu(e, path)}
+                    className="nav__link"
+                  >
+                    {title}
                   </Link>
                 </li>
               ))}
@@ -64,10 +76,13 @@ const Nav = ({ classNames }) => {
           </li>
           <li className="nav__item">
             <ul className="nav__list nav__list--inner">
-              {path?.map((el) => (
+              {path?.map(({ title, path }) => (
                 <li className="nav__item--inner">
-                  <Link to={el.path} className="nav__link">
-                    {el.title}
+                  <Link
+                    onClick={(e) => toggleMenu(e, path)}
+                    className="nav__link"
+                  >
+                    {title}
                   </Link>
                 </li>
               ))}
@@ -79,10 +94,13 @@ const Nav = ({ classNames }) => {
         <ul className="nav__list">
           <li className="nav__item">
             <ul className="nav__list nav__list--inner">
-              {path?.map((el) => (
+              {path?.map(({ title, path }) => (
                 <li className="nav__item--inner">
-                  <Link to={el.path} className="nav__link">
-                    {el.title}
+                  <Link
+                    onClick={(e) => toggleMenu(e, path)}
+                    className="nav__link"
+                  >
+                    {title}
                   </Link>
                 </li>
               ))}
@@ -90,10 +108,13 @@ const Nav = ({ classNames }) => {
           </li>
           <li className="nav__item">
             <ul className="nav__list nav__list--inner">
-              {path?.map((el) => (
+              {path?.map(({ title, path }) => (
                 <li className="nav__item--inner">
-                  <Link to={el.path} className="nav__link">
-                    {el.title}
+                  <Link
+                    onClick={(e) => toggleMenu(e, path)}
+                    className="nav__link"
+                  >
+                    {title}
                   </Link>
                 </li>
               ))}

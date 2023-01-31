@@ -15,7 +15,7 @@ const SquareButton = ({
   fullWidth
 }) => {
   const classes = cn(
-    "button",
+    "square-button",
     color === "accent" && `button--${color}`,
     fullWidth && "button--full-width",
     variant === "outlined" && `button--${variant}`,
@@ -38,7 +38,7 @@ const SquareButton = ({
     >
       <>
         {line && <hr className="button__line" />}
-        <span className="button__text">{children}</span>
+        <span className="square-button__text">{children}</span>
       </>
     </button>
   );

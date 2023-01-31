@@ -1,4 +1,5 @@
 import React from "react";
+
 import Button from "../../common/Button";
 
 const Wellcome = () => {
@@ -8,7 +9,12 @@ const Wellcome = () => {
         <div className="wellcome__inner container">
           <div className="wellcome__col">
             <h2 className="wellcome__title">Завітайте у музей</h2>
-            <Button className="wellcome__button" line color="accent" textColor="black">
+            <Button
+              className="wellcome__button"
+              line
+              color="accent"
+              textColor="black"
+            >
               Придбати квитки
             </Button>
           </div>

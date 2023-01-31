@@ -1,6 +1,6 @@
 .side-block
     z-index: 999
-    position: sticky
+    position: absolute
     top: 0
     bottom: 0
     right: 0
@@ -11,14 +11,14 @@
     margin-left: auto
     border-left: 2px solid currentColor
     background-color: $mainColor
-    &--sticky
-        position: sticky
-        // height: 100vh
+    &--fixed
+        position: fixed
     &--white
         background-color: $blackColor
         color: $whiteColor
 
     &__button
+        position: sticky
         display: flex
         align-items: center
         justify-content: center
@@ -28,9 +28,11 @@
         color: inherit
 
         &--menu
+            top: 0
             border-bottom: 2px solid
 
         &--scroll-top
+            bottom: 0
             display: none
             border-top: 2px solid
 

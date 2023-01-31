@@ -6,9 +6,7 @@
     color: $mainColor
 
     &__inner
-        display: grid
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
-        gap: 100px
+        +dg(300, 1fr, 100)
 
     &__col
         display: flex

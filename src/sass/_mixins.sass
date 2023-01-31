@@ -16,7 +16,6 @@
   @media only screen and (min-height: $height + "px")
     @content
 
-
 @mixin css-lock($min-size: 1, $max-size: 1.4, $min-width: 20, $max-width: 100, $property: font-size, $unit: px)
   #{$property}: #{$max-size}#{$unit}
   #{$property}: calc(#{$min-size}#{$unit} + (#{$max-size} - #{$min-size}) * ((100vw - #{$min-width}#{$unit}) / (#{$max-width} - #{$min-width})))
@@ -24,7 +23,7 @@
     #{$property}: #{$min-size}#{$unit}
   @media (min-width: #{$max-width}#{$unit})
     #{$property}: #{$max-size}#{$unit}
-    
+
 =fs($sizeValue: 16)
   font-size: $sizeValue + px
   font-size: $sizeValue / 10 + rem
@@ -122,7 +121,6 @@ font-family
 
 =hidetext
   +hide-text
-
 
 // IMPORTANT!!!! REQUIRES SPACES BETWEEN ELEMENTS, NO SUCH STUFF: </li><li>
 =justify
@@ -277,9 +275,24 @@ font-family
   $font-family: null
   @if $name == "l"
     $font-family: "light"
-  font-family: $font-family
-  font-weight: normal
+    font-family: $font-family
+    font-weight: normal
   @if $font-size != null
     font-size: $font-size + px
   @if $letter-spacing != null
     letter-spacing: ($letter-spacing / 1000) + em
+
+=h1($fontFamily: $baseFont, $size: 7rem, $lineHeight: 1.18, $fontWeight: normal)
+  font: $fontWeight $size/#{$lineHeight} $fontFamily
+  +r(1200)
+    font-size: $size * 0.7
+  +r(900)
+    font-size: $size * 0.4
+  +r(600)
+    font-size: $size * 0.3
+
+=dg($min: 0, $max: 1fr, $gap: 0)
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax($min + px, $max))
+  @if $gap > 0
+    gap: $gap + px

@@ -1,4 +1,5 @@
 import React from "react";
+import { PropTypes } from "prop-types";
 
 import { ReactComponent as Sound } from "../../assets/icons/volume_up_24px_outlined.svg";
 import { ReactComponent as Eye } from "../../assets/icons/visibility_24px.svg";
