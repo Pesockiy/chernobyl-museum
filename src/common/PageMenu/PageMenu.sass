@@ -1,0 +1,131 @@
+.page-menu
+    $this: &
+
+    &__search-label
+        display: block
+        font-family: 'Times New Roman'
+        font-style: normal
+        font-weight: 400
+        font-size: 1rem
+        line-height: 1.43
+        margin-bottom: 9px
+        color: $blackColor
+
+    &__search
+        width: 270px
+        height: 60px
+        padding: 15px 16px
+        margin-bnpottom: 40px
+        border: 5px solid $lightGrayColor
+
+        color: $blackColor
+        font-family: 'Times New Roman'
+        font-style: normal
+        font-weight: 400
+        font-size: 1.31rem
+        line-height: 1.47
+        margin-bottom: 40px
+        +sm
+            width: 100%
+
+        &:focus
+            border-color: $blackColor
+
+        &::placeholder
+            color: $lightGrayColor
+            font-family: 'Times New Roman'
+            font-style: normal
+            font-weight: 400
+            font-size: 1.31rem
+            line-height: 1.47
+
+    &__links
+        border-left: 2px solid $blackColor
+
+    &__link
+        // font-family: ' Num Type';
+        display: block
+        position: relative
+        padding-left: 32px
+        text-transform: uppercase
+        font-style: normal
+        font-weight: 500
+        font-size: 1.125rem
+        line-height: 50px
+        letter-spacing: 0.1em
+        color: $blackColor
+
+        &::before
+            content: ''
+            position: absolute
+            height: 100%
+            background-color: $blackColor
+            top: 0
+            left: 0
+            bottom: 0
+            transition: transform .5s ease-out
+            transform: scaleX(0)
+            width: 10px
+            transform-origin: left
+
+        &:hover
+            &::before
+                transform: scaleX(1)
+
+        &.is-active
+            &::before
+                transform: scaleX(1)
+
+    &__dropdown
+        width: 100%
+        border-bottom: 2px solid #000000
+        margin-bottom: 40px
+        &.is-open
+            #{$this}__arrow
+                transform: rotate(180deg)
+            #{$this}__placeholder
+                margin-bottom: 24px
+
+    &__dropdown-control
+        background-color: #F5F3EA
+        display: flex
+        align-items: center
+        justify-content: space-between
+
+    &__placeholder
+        line-height: 27px
+        font-family: ' Num Type'
+        font-style: normal
+        font-weight: 500
+        font-size: 1.125rem
+        letter-spacing: 0.1em
+        color: #000000
+        text-transform: uppercase
+        margin-bottom: 8px
+        padding-left: 4px
+
+    &__menu
+        [role="option"]
+            line-height: 27px
+            font-family: ' Num Type'
+            font-style: normal
+            font-weight: 500
+            font-size: 1.125rem
+            letter-spacing: 0.1em
+            color: #000000
+            text-transform: uppercase
+            margin-bottom: 24px
+            padding-left: 4px
+
+            &.is-selected
+                display: none
+
+        
+    &__arrow
+        display: block
+        transform-origin: center 30%
+        transition: transform 0.2s ease-in-out
+        &::before
+            content: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width%3D%2220%22%20height%3D%2214%22%20viewBox%3D%220%200%2020%2014%22%20fill%3D%22none%22%3E%3Cpath%20d%3D%22M2%202L10.4444%2011L18%202%22%20stroke%3D%22black%22%20stroke-width%3D%223%22%2F%3E%3C%2Fsvg%3E ")
+            width: 200px
+            height: 200px
