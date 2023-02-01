@@ -1,10 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import cn from "class-names";
 import { PropTypes } from "prop-types";
 
 const Button = ({
   type,
   color,
+  asLink,
+  href,
   disabled,
   onClick,
   children,
@@ -30,22 +33,35 @@ const Button = ({
   );
 
   return (
-    <button
-      disabled={disabled}
-      type={type}
-      onClick={onClick}
-      className={classes}
-    >
-      <>
-        {line && <hr className="button__line" />}
-        <span className="button__text">{children}</span>
-      </>
-    </button>
+    <>
+      {asLink ? (
+        <Link disabled={disabled} className={classes} to={href}>
+          <>
+            {line && <hr className="button__line" />}
+            <span className="button__text">{children}</span>
+          </>
+        </Link>
+      ) : (
+        <button
+          disabled={disabled}
+          type={type}
+          onClick={onClick}
+          className={classes}
+        >
+          <>
+            {line && <hr className="button__line" />}
+            <span className="button__text">{children}</span>
+          </>
+        </button>
+      )}
+    </>
   );
 };
 
 Button.propTypes = {
   type: PropTypes.string,
+  asLink: PropTypes.bool,
+  to: PropTypes.string,
   color: PropTypes.string,
   textColor: PropTypes.oneOf(["black", "white", "accent"]),
   fullWidth: PropTypes.bool,
@@ -59,6 +75,8 @@ Button.propTypes = {
 
 Button.defaultProp = {
   type: "button",
+  href: "",
+  asLink: false,
   disabled: false,
   onClick: () => {},
   line: false,

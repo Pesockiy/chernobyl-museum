@@ -11,9 +11,11 @@ const Wellcome = () => {
             <h2 className="wellcome__title">Завітайте у музей</h2>
             <Button
               className="wellcome__button"
-              line
+              asLink
+              href="quiz"
               color="accent"
               textColor="black"
+              line
             >
               Придбати квитки
             </Button>

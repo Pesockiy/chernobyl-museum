@@ -1,7 +1,7 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import cx from "class-names";
 import { PropTypes } from "prop-types";
+
 import Button from "../../common/Button";
 
 const errorData = {
@@ -9,10 +9,8 @@ const errorData = {
   text: "Такої сторінки не існуює",
 };
 
-const Error = ({ errorCode, title, text, className, children, link }) => {
+const Error = ({ errorCode, title, text, className, children }) => {
   const classes = cx("error", className);
-
-  const navigate = useNavigate();
 
   return (
     <div className={classes}>
@@ -22,9 +20,8 @@ const Error = ({ errorCode, title, text, className, children, link }) => {
         {children}
         {errorCode === "404" && (
           <Button
-            onClick={() => {
-              navigate(link);
-            }}
+            asLink
+            href="/"
             className="error__button"
             textColor="white"
             line
@@ -39,6 +36,7 @@ const Error = ({ errorCode, title, text, className, children, link }) => {
 };
 
 Error.propTypes = {
+  errorCode: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   className: PropTypes.string,
