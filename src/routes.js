@@ -1,7 +1,6 @@
 import Main from "./pages/Main";
 import Quiz from "./components/Quiz";
 
-import Layout from "./components/Layout";
 import News from "./pages/News";
 import NewsArticle from "./pages/NewsArticle";
 import Museum from "./pages/Museum";
