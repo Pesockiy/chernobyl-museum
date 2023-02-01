@@ -17,16 +17,24 @@
     "react-datepicker": "^4.8.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
+    "react-dropdown": "^1.11.0",
+    "react-responsive": "^9.0.2",
     "react-router-dom": "^6.6.0",
     "react-scripts": "5.0.1",
     "swiper": "^8.4.5",
     "web-vitals": "^2.1.4"
   },
+  "devDependencies": {
+    "eslint-config-next": "12.2.0",
+    "svg-sprite": "^1.5.4",
+    "svgo": "^2.8.0"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "sprite": "svg-sprite -s --svg-namespace-classnames=true --symbol-dest src/assets/icons --symbol-sprite _sprite.svg src/assets/icons/**/*.svg --shape-transform-* svg-sprite-config.json --symbol-render-scss true --symbol-render-scss-dest ../../common/Icon/Icon.scss --symbol-render-scss-template src/sass/_sprite_template.scss && svgo src/assets/icons/_sprite.svg --config svgo.config.js"
   },
   "eslintConfig": {
     "extends": [

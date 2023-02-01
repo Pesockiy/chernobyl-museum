@@ -1,0 +1,12 @@
+{
+    "page": {
+        "slug": "new-1",
+        "title": "Какая-то новость",
+        "body": "<h1>заголовок новости</h1><block-form :form='{\"id\":4,\"title\":\"Написати нам\",\"subtitle\":\"\",\"description\":\"\\u003Cp\\u003E\\u0026nbsp;\\u003C\\/p\\u003E\\n\\n\\u003Cp\\u003E\\u0026nbsp;\\u003C\\/p\\u003E\",\"legal\":\"\\u003Cp\\u003E\\u003Cem\\u003E\\u003Csmall\\u003E*Обов\\u0026rsquo;язкові поля для заповнення\\u003C\\/small\\u003E\\u003C\\/em\\u003E\\u003C\\/p\\u003E\\n\\n\\u003Cp\\u003E\\u0026nbsp;\\u003C\\/p\\u003E\",\"show_personal_data_message\":1,\"show_title\":1,\"button_title\":\"НАДІСЛАТИ\",\"gtm_event\":null}' :fields='[{\"id\":18,\"field_type\":\"small_text\",\"unique_code\":\"prizvishche\",\"required\":1,\"full_width\":0,\"title\":\"Прізвище\",\"placeholder\":\"Прізвище\",\"default\":\"\",\"is_disabled\":0,\"focus_action\":false,\"mask\":null,\"gtm_event\":null,\"field_data\":[]},{\"id\":19,\"field_type\":\"small_text\",\"unique_code\":\"imya\",\"required\":1,\"full_width\":0,\"title\":\"Ім’я\",\"placeholder\":\"\",\"default\":\"\",\"is_disabled\":0,\"focus_action\":false,\"mask\":null,\"gtm_event\":null,\"field_data\":[]},{\"id\":20,\"field_type\":\"phone\",\"unique_code\":\"kontaktniy-tel\",\"required\":1,\"full_width\":0,\"title\":\"Контактний тел.\",\"placeholder\":\"\",\"default\":\"\",\"is_disabled\":0,\"focus_action\":false,\"mask\":null,\"gtm_event\":null,\"field_data\":[]},{\"id\":21,\"field_type\":\"email\",\"unique_code\":\"e-mail\",\"required\":0,\"full_width\":0,\"title\":\"Електронна адреса\",\"placeholder\":\"\",\"default\":\"\",\"is_disabled\":0,\"focus_action\":false,\"mask\":null,\"gtm_event\":null,\"field_data\":[]},{\"id\":22,\"field_type\":\"middle_text\",\"unique_code\":\"komentar\",\"required\":0,\"full_width\":1,\"title\":\"Коментар\",\"placeholder\":\"\",\"default\":\"\",\"is_disabled\":0,\"focus_action\":false,\"mask\":null,\"gtm_event\":null,\"field_data\":[]}]'></block-form>",
+        "created_at": "2021-03-24T08:45:55.000000Z",
+        "updated_at": "2022-06-09T14:43:20.000000Z"
+    }, 
+    "breadcrumbs": [], 
+    "page_template": "new", 
+    "meta": {}
+}

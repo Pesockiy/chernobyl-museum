@@ -1,0 +1,51 @@
+.news-item
+    width: 100%
+    max-width: 100%
+    min-width: none
+
+    &__title
+        margin-top: 16px
+        +clamb(3)
+
+    &__image
+        width: 100%
+
+    &__date
+        display: flex
+        flex-direction: row
+        align-items: center
+        justify-content: flex-start
+        margin-top: 8px
+
+    &__calendar-icon
+        font-size: 10px
+        display: inline-block
+        margin-right: 6px
+
+    &__date-text
+        display: block
+        // font-family: ' Num Type'
+        font-style: normal
+        font-weight: 500
+        font-size: 18px
+        line-height: 27px
+        letter-spacing: 0.1em
+        color: $blackColor
+    
+    &__preview
+        margin-top: 15px
+        +clamb(3)
+
+    &__more
+        display: flex
+        align-items: center
+        margin-top: 24px
+
+    &__more-text
+        color: #0094FF
+        display: block
+        text-transform: uppercase
+
+    &__more-icon
+        margin-left: 8px
+        color: #0094FF

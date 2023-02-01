@@ -1,0 +1,12 @@
+{
+    "svgo": {
+        "plugins": [
+            {
+                "name": "removeAttrs",
+                "params": {
+                    "attrs": "(fill|stroke)"
+                }
+            }
+        ]
+    }
+}
