@@ -21,7 +21,7 @@ const UpcomingEvents = ({ events }) => {
           {data?.map((event) => (
             <Event key={event.id} {...event} />
           ))}
-          <SquareButton onClick={showMore}>
+          <SquareButton className="upcoming-events__button" onClick={showMore}>
             <Arrow />
             Ще події
           </SquareButton>

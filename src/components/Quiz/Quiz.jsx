@@ -74,7 +74,12 @@ const Quiz = () => {
                 value={stage === 0 ? 0 : (stage / questions.length) * 100}
                 line
               />
-              <Button textColor="white" onClick={increeseHanlde} className="quiz__button" line>
+              <Button
+                textColor="white"
+                onClick={increeseHanlde}
+                className="quiz__button"
+                line
+              >
                 Наступне питання
               </Button>
             </div>

@@ -27,7 +27,7 @@ const Layout = () => {
           openMenuHandle={menuHandle}
         />
 
-        <Outlet />
+        <Outlet s="ds" />
       </main>
 
       <Footer />

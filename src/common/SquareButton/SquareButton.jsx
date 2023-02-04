@@ -8,7 +8,7 @@ const SquareButton = ({
   disabled,
   onClick,
   children,
-  classNames,
+  className,
   line,
   variant,
   textVariant,
@@ -26,7 +26,7 @@ const SquareButton = ({
       : textVariant === "white"
       ? "button--text-white"
       : "",
-    classNames
+    className
   );
 
   return (
@@ -51,7 +51,7 @@ SquareButton.propTypes = {
   disabled: PropTypes.bool,
   onClick: PropTypes.func,
   children: PropTypes.node.isRequired,
-  classNames: PropTypes.string,
+  className: PropTypes.string,
   line: PropTypes.bool,
   variant: PropTypes.string,
   textVariant: PropTypes.oneOf(["black", "white", "accent"]),
@@ -62,7 +62,7 @@ SquareButton.defaultProp = {
   color: "",
   disabled: false,
   onClick: () => {},
-  classNames: "",
+  className: "",
   line: false,
   variant: "default",
   textVariant: "",
