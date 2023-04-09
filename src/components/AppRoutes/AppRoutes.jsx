@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { PropTypes } from "prop-types";
+import PropTypes from "prop-types";
 
 import Layout from "../Layout";
 

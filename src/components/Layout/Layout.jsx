@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { Outlet } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Outlet, useLocation } from "react-router-dom";
 
-import { useScroll } from "../../hooks";
+import { useScrollTop } from "../../hooks";
 
 import Menu from "../Menu";
 import SideBlock from "../SideBlock";
@@ -11,9 +11,14 @@ import { smoothScroll } from "../../helpers";
 
 const Layout = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isVisible] = useScroll();
+  const [isVisible] = useScrollTop();
+  let location = useLocation();
 
   const menuHandle = () => setIsMenuOpen(!isMenuOpen);
+
+  useEffect(() => {
+    isMenuOpen && setIsMenuOpen(false);
+  }, [location]);
 
   return (
     <>
@@ -27,7 +32,7 @@ const Layout = () => {
           openMenuHandle={menuHandle}
         />
 
-        <Outlet s="ds" />
+        <Outlet />
       </main>
 
       <Footer />

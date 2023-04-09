@@ -10,28 +10,10 @@
         font: 500 2.5rem/1.48 $baseFont
         letter-spacing: 0.1em
         text-transform: uppercase
-
-.lang
-    &__list
+    &__row
         display: flex
         align-items: center
-
-    &__item + &__item
-        margin-left: 40px
-        
-    &__item
-        display: inherit
-        align-items: inherit
-        svg
-            margin-right: 4px
-            width: 32px
-            height: 20px
-
-.options
-    display: flex
-    align-items: center
-
-    &__item
+    &__col
         display: inherit
         align-items: inherit
         padding-left: 40px
@@ -53,3 +35,19 @@
         svg,
         svg > *
             fill: currentColor
+
+.lang
+    &__list
+        display: flex
+        align-items: center
+
+    &__item + &__item
+        margin-left: 40px
+
+    &__item
+        display: inherit
+        align-items: inherit
+        svg
+            margin-right: 4px
+            width: 32px
+            height: 20px

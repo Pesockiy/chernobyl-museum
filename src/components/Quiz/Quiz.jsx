@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { PropTypes } from "prop-types";
+import PropTypes from "prop-types";
 import { Formik, Form } from "formik";
 import { useSelector, useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
 
 import { incrementStage, addAsk } from "../../store/quizSlice";
 

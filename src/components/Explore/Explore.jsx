@@ -1,5 +1,5 @@
 import React from "react";
-import { PropTypes } from "prop-types";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 const Explore = ({ img, title, icon, text, link }) => {

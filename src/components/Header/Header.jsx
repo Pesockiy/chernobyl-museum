@@ -1,35 +1,34 @@
 import React from "react";
-import { PropTypes } from "prop-types";
 
-import { ReactComponent as Sound } from "../../assets/icons/volume_up_24px_outlined.svg";
-import { ReactComponent as Eye } from "../../assets/icons/visibility_24px.svg";
-import { ReactComponent as UaFlag } from "../../assets/icons/flag-for-flag-ukraine-svgrepo-com.svg";
-import { ReactComponent as UsaFlag } from "../../assets/icons/flag-for-flag-united-states-svgrepo-com.svg";
+import { Icon } from "../../common/Icon/Icon";
 
 const Header = () => {
   return (
     <header className="menu__top header container">
       <span className="header__logo">menu</span>
 
-      <div className="header__options options">
-        <div className="options__item lang">
+      <div className="header__row">
+        <div className="header__col lang">
           <ul className="lang__list">
             <li className="lang__item">
-              <UaFlag />
+              <Icon icon="flag-for-flag-ukraine-svgrepo-com" color="#fff" />
               Укр
             </li>
             <li className="lang__item">
-              <UsaFlag />
+              <Icon
+                icon="flag-for-flag-united-states-svgrepo-com"
+                color="#fff"
+              />
               EN
             </li>
           </ul>
         </div>
-        <div className="options__item">
-          <Sound />
+        <div className="header__col">
+          <Icon icon="volume_up_24px_outlined" color="#fff" />
           Вимкнути звук
         </div>
-        <div className="options__item">
-          <Eye />
+        <div className="header__col">
+          <Icon icon="visibility_24px" color="#fff" />
           Людям із порушеннями зору
         </div>
       </div>

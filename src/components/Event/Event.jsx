@@ -1,5 +1,5 @@
 import React from "react";
-import { PropTypes } from "prop-types";
+import PropTypes from "prop-types";
 import cx from "class-names";
 
 import Button from "../../common/Button";
@@ -15,7 +15,7 @@ const Event = ({ img, title, date, text, clickHandle, className }) => {
         {title} {date}
       </div>
       <Line className="event__line" />
-      <p className="event__text">{text}text</p>
+      <p className="event__text">{text}</p>
 
       <Button
         textColor="accent"

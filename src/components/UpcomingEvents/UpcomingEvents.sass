@@ -1,4 +1,5 @@
 .upcoming-events
+    $this: &
     padding-top: 72px
     padding-bottom: 72px
 
@@ -16,3 +17,6 @@
         width: 100%
         height: auto
         aspect-ratio: 1
+        &:hover #{$this}__icon *
+            fill: $accentColor
+    

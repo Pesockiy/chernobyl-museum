@@ -1,2 +1,2 @@
-import useScroll from "./useScroll";
-export { useScroll };
+import useScrollTop from "./useScrollTop";
+export { useScrollTop };

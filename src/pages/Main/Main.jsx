@@ -4,7 +4,8 @@ import MainInfo from "../../components/MainInfo";
 import MainTop from "../../components/MainTop";
 import Wellcome from "../../components/Wellcome";
 import Quiz from "../../components/Quiz";
-import { ReactComponent as Icon } from "../../assets/icons/sphere.svg";
+
+import { Icon } from "../../common/Icon/Icon";
 
 import Img from "../../common/Img";
 
@@ -30,7 +31,7 @@ const Main = () => {
         title="Досліджуй вдома"
         text="тисніть, щоб відвідати 3D тур по музею"
         link="/"
-        icon={<Icon />}
+        icon={<Icon icon="sphere" size="70" color="#fff"/>}
       />
       <Quiz />
     </>

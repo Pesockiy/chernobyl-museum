@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const useScroll = (val = 300) => {
+const useScrollTop = (val = 300) => {
   const [isVisible, setVisible] = useState(false);
 
   const toggleVisible = () => {
@@ -24,4 +24,4 @@ const useScroll = (val = 300) => {
   return [isVisible];
 };
 
-export default useScroll;
+export default useScrollTop;

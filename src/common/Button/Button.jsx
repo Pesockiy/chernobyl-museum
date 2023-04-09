@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import cn from "class-names";
-import { PropTypes } from "prop-types";
+import PropTypes from "prop-types";
 
 const Button = ({
   type,
@@ -19,16 +19,12 @@ const Button = ({
 }) => {
   const classes = cn(
     "button",
-    color === "accent" && "button--accent",
-    fullWidth && "button--full-width",
-    variant === "outlined" && "button--outlined",
-    textColor === "black"
-      ? "button--text-black"
-      : textColor === "accent"
-      ? "button--text-accent"
-      : textColor === "white"
-      ? "button--text-white"
-      : "",
+    {
+      "button--full-width": fullWidth,
+      [`button--${variant}`]: variant,
+      [`button--${color}`]: color,
+      [`button--${textColor}`]: textColor,
+    },
     className
   );
 

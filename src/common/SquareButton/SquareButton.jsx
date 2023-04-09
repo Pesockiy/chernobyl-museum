@@ -1,6 +1,6 @@
 import React from "react";
 import cn from "class-names";
-import { PropTypes } from "prop-types";
+import PropTypes from "prop-types";
 
 const SquareButton = ({
   type,
@@ -15,17 +15,13 @@ const SquareButton = ({
   fullWidth
 }) => {
   const classes = cn(
-    "square-button",
-    color === "accent" && `button--${color}`,
-    fullWidth && "button--full-width",
-    variant === "outlined" && `button--${variant}`,
-    textVariant === "black"
-      ? "button--text-black"
-      : textVariant === "accent"
-      ? "button--text-accent"
-      : textVariant === "white"
-      ? "button--text-white"
-      : "",
+    "square-button", 
+    {
+			'button--full-width': fullWidth,
+      [`button--${color}`]: color,
+      [`button--${variant}`]: variant,
+      [`button--${textVariant}`]: textVariant
+    },
     className
   );
 

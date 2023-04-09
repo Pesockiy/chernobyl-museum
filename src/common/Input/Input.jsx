@@ -1,7 +1,7 @@
 import React from "react";
 import { Field } from "formik";
 import cn from "class-names";
-import { PropTypes } from "prop-types";
+import PropTypes from "prop-types";
 
 const Input = ({
   id,

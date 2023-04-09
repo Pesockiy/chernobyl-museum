@@ -1,10 +1,8 @@
 import React from "react";
 import cx from "class-names";
-import { PropTypes } from "prop-types";
+import PropTypes from "prop-types";
 
-import { ReactComponent as Burger } from "../../assets/icons/burger.svg";
-import { ReactComponent as Close } from "../../assets/icons/close.svg";
-import { ReactComponent as Arrow } from "../../assets/icons/arrow.svg";
+import { Icon } from "../../common/Icon/Icon";
 
 const SideBlock = ({
   scrollToTopHandle,
@@ -15,8 +13,10 @@ const SideBlock = ({
 }) => {
   const classes = cx(
     "side-block",
-    isMenuOpen && "side-block--white",
-    isMenuOpen && "side-block--fixed"
+    { 
+      "side-block--white": isMenuOpen,
+      "side-block--fixed": isMenuOpen
+    }
   );
 
   const buttonMenuClasses = cx(
@@ -33,12 +33,12 @@ const SideBlock = ({
   return (
     <div className={classes} style={style}>
       <button className={buttonMenuClasses} onClick={openMenuHandle}>
-        {!isMenuOpen ? <Burger /> : <Close />}
+        {!isMenuOpen ? <Icon icon="burger" /> : <Icon icon="close" color="#fff" />}
       </button>
 
       {!isMenuOpen && (
         <button className={buttonScrollTopClasses} onClick={scrollToTopHandle}>
-          <Arrow className="side-block__arrow" />
+          <Icon classNames="side-block__arrow" icon="arrow"/>
         </button>
       )}
     </div>

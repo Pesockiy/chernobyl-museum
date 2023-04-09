@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { PropTypes } from "prop-types";
+import PropTypes from "prop-types";
 
 import Event from "../Event";
 import SquareButton from "../../common/SquareButton/SquareButton";
 
-import { ReactComponent as Arrow } from "../../assets/icons/arrow.svg";
+import { Icon } from "../../common/Icon/Icon";
 
 const UpcomingEvents = ({ events }) => {
   const [data, setData] = useState(events.slice(0,3));
@@ -22,7 +22,7 @@ const UpcomingEvents = ({ events }) => {
             <Event key={event.id} {...event} />
           ))}
           <SquareButton className="upcoming-events__button" onClick={showMore}>
-            <Arrow />
+            <Icon icon="arrow" classNames="upcoming-events__icon" />
             Ще події
           </SquareButton>
         </div>
